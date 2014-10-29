@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="css/drag.css" />
+<script type="text/javascript" src="js/jquery.1.11.0.js"></script>
+<style>
+	*{margin:0;padding:0}
+	.test{width:500px;margin:20px auto;}
+	.test1{width:500px;margin:20px auto;}
+</style>
+</head>
+<body>
+<div class="test"></div>
+<div class="test1"></div>
+<script type="text/javascript" src="js/drag.js"></script>
+<script type="text/javascript">
+$(function(){
+	test = $('.test').sae_dragBar({
+		disabled:false,//禁用
+		animate:true,//是否启用动画效果
+		orientation:'horizontal',//水平or垂直
+		range:true,//true表示范围选择
+		min:1,//起点表示的数值
+		max:10,//终点表示的数值
+		step:1,//间隔值
+		value:0,//单点拖动时的初始值
+		values:[0,10],//范围拖动时的初始值
+		start:function(drag,value,range){console.log(drag,value,range)},//拖动开始回调
+		stop:function(drag,value,range){console.log(drag,value,range)},//拖动结束回调
+		sliding:function(drag,value,range){console.log(drag,value,range);drag.find('.slide-drag-info').text(value)},//拖动值变化回调
+		change:function(drag,value,range){console.log(drag,value,range)},//结束拖动后的值与开始拖动前的值不一致时回调
+		create:function(drag,range){
+			//console.log(drag,range)
+			var d=drag.find('.slide-drag-info'),l=d.length;
+			if(l==1){
+				d.html(range[1]);
+			}else{
+				d.each(function(i){this.innerHTML=range[i]});
+			}
+		},
+		duration:200
+	}).disable().enable();
+
+	test1 = $('.test1').sae_dragBar({
+		disabled:false,//禁用
+		animate:true,//是否启用动画效果
+		orientation:'horizontal',//水平or垂直
+		range:true,//true表示范围选择
+		min:1,//起点表示的数值
+		max:10,//终点表示的数值
+		step:1,//间隔值
+		value:0,//单点拖动时的初始值
+		values:[0,10],//范围拖动时的初始值
+		start:function(drag,value,range){console.log(drag,value,range)},//拖动开始回调
+		stop:function(drag,value,range){console.log(drag,value,range)},//拖动结束回调
+		sliding:function(drag,value,range){console.log(drag,value,range);drag.find('.slide-drag-info').text(value)},//拖动值变化回调
+		change:function(drag,value,range){console.log(drag,value,range)},//结束拖动后的值与开始拖动前的值不一致时回调
+		create:function(drag,range){
+			//console.log(drag,range)
+			var d=drag.find('.slide-drag-info'),l=d.length;
+			if(l==1){
+				d.html(range[1]);
+			}else{
+				d.each(function(i){this.innerHTML=range[i]});
+			}
+		},
+		duration:400
+	}).disable().enable();
+});
+</script>
+</body>
+</html>

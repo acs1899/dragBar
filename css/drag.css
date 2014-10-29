@@ -1,0 +1,7 @@
+@charset 'utf-8';
+.slide-cont{position:relative;border:1px solid #ccc;height:100%;}
+.slide-bar{position:absolute;background-color:#999;left:0;top:0;height:100%;width:100%;z-index:1;}
+.slide-vertical{width:14px;}
+.slide-horizontal{height:14px;}
+.slide-drag{display:block;width:18px;height:18px;background-color:#666;position:absolute;margin:-2px 0 0 -2px;z-index:2;}
+.slide-drag-info{display:block;position:absolute;margin-top:-100%;}
