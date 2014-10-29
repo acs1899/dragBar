@@ -15,7 +15,7 @@
 * step:1,                     ------drag step
 * value:0,                    ------dragbar start value
 * values:[0,100],             ------dragbar start range(when range is true)
-* start:function(drag,value,range){} ------drag start callback(param:'drag'-the drag button;'value'-current value;'range'-current range value)
+* start:function(drag,value,range){} ------drag start callback `param:'drag'-the drag button;'value'-current value;'range'-current range value`
 * stop:function(drag,value,range){} ------drag stop callback
 * sliding:function(drag,value,range){} ------draging callback
 * change:function(drag,value,range){} ------when stop value does not equal start value callback
